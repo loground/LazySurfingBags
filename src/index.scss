@@ -1,0 +1,136 @@
+.header {
+  background-image: url('./itemsToUse/mainpic2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  color: white;
+  display: inline-flex;
+  width: 100%;
+}
+
+.corner-cart {
+  margin-left: 600px;
+}
+
+.main-header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-navigation {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-navigation-item {
+  margin-right: 20px;
+}
+
+.main-picture {
+  margin-top: 0px;
+}
+
+.render-container {
+  display: flex;
+  height: 500px;
+}
+
+.render {
+  width: 50%;
+  height: 100%;
+}
+
+.jumbotron {
+  padding: 2rem;
+  background-color: blue;
+}
+
+.jumbotron h1 {
+  font-size: 2.5rem;
+}
+
+.jumbotron p {
+  font-size: 1.25rem;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 100px;
+  height: 50px;
+}
+
+.footer-social img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.products-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+
+  img {
+    cursor: pointer;
+    width: 500px;
+    height: 500px;
+    margin: 5px;
+
+    &:hover {
+      box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.sale {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .explosion {
+    max-width: 100%;
+    height: auto;
+
+    &:hover {
+      box-shadow: 0px 100px 100px rgba(255, 0, 212, 1);
+      transform: translateY(20px);
+    }
+  }
+
+  .cards-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+  }
+}
+
+.cartwrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Set a minimum height to the wrapper to center its content vertically */
+}
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
