@@ -10,7 +10,9 @@
 }
 
 .corner-cart {
-  margin-left: 600px;
+  position: absolute; /* Position the cart absolutely within the header */
+  top: 25px; /* Adjust the top position as needed */
+  right: 20px; /* Adjust the right position as needed */
 }
 
 .main-header-nav {
@@ -79,20 +81,61 @@
 .products-box {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between; /* Use space-between to place two items on each line with space in between */
   align-items: center;
   width: 100%;
-  margin: 0 auto;
 
-  img {
-    cursor: pointer;
-    width: 500px;
-    height: 500px;
+  div {
+    position: relative; /* Add this to make the product title position relative to the container */
+    width: 48%; /* Each item container takes 48% of the parent container's width to leave space between two items */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 5px;
 
-    &:hover {
-      box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
-      transform: translateY(-5px);
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 182, 193, 0.7);
+      color: rgb(173, 0, 236);
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 5px;
+
+      &:hover {
+        box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
+        animation: spin 5s linear infinite;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      cursor: pointer;
+      width: 500px;
+      height: 500px;
+      margin: 5px;
+
+      &:hover {
+        box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
+        transform: translateY(-5px);
+        animation: spin 5s linear infinite;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
     }
   }
 }
@@ -133,4 +176,13 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); /* Start the rotation from 0 degrees */
+  }
+  to {
+    transform: rotate(360deg); /* Rotate the image 360 degrees */
+  }
 }

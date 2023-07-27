@@ -1,25 +1,69 @@
-import React from 'react'
-import Footer from '../Components/Footer'
-import Header from '../Components/Header'
-import prod1 from '../itemsToUse/prod1.png'
-import prod2 from '../itemsToUse/prod2.png'
-import prod3 from '../itemsToUse/prod3.png'
-import prod4 from '../itemsToUse/prod4.png'
+import React, { useState, useEffect, useRef } from 'react';
+import Flipper from '../Components/FlippingCard/FlippingCard';
+import Header from '../Components/Header';
+import styles from './Popup.module.scss';
 
+interface ProductProps {
+  title: string;
+  imageUrl: string;
+  price: string;
+  id: string;
+}
 
-const Products = () => {
+interface ProductsProps {
+  bagCategories: ProductProps[];
+}
+
+const Products: React.FC<ProductsProps> = ({ bagCategories }) => {
+  const [showPopup, setShowPopup] = useState(false);
+  const popupRef = useRef<HTMLDivElement>(null);
+
+  const openPopup = () => {
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
+        closePopup();
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, []);
+
   return (
     <div>
-        <Header />
-        <div className='products-box'>
-            <img src={prod1} alt='чехлы1'></img>
-            <img src={prod2} alt='чехлы2'></img>
-            <img src={prod3} alt='чехлы3'></img>
-            <img src={prod4} alt='чехлы4'></img>
-        </div>
-        <Footer />
-    </div>
+      <Header />
+      <div className='products-box'>
+        {bagCategories.map((product) => (
+          <div key={product.id}>
+            <img src={product.imageUrl} alt={product.title} onClick={openPopup} />
+            <h1 className='product_names'>{product.title}</h1>
+          </div>
+        ))}
+      </div>
 
-  )
-}
+      {showPopup && (
+        <div className={styles.backdrop}>
+          <div className={styles.popup_content} ref={popupRef}>
+            <Flipper />
+            <button className={styles.closePopUp} onClick={closePopup}>
+              Close Popup
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default Products;

@@ -22,9 +22,6 @@ const VisualsCarousel = () => {
       bullets={true}
       arrowsNav={true}
       animation={'scale'}
-      callback={() => {
-        console.log('here');
-      }}
     >
       <div className='slider my-slider'>
         <ul className='slider-wrapper'>
