@@ -1,11 +1,12 @@
-import React from 'react'
-import mainPic from '../itemsToUse/mainpic2.png';
+import mainPic from '../itemsToUse/back.jpg';
 
 export const MainCaruselle = () => {
   return (
     <div className="main-picture">
-    <img src={mainPic} width="100%" height="600" alt="lazysurfbags"></img>
-  </div>
+      <div className="image-container">
+        <img src={mainPic} alt="lazysurfbags"/>
+      </div>
+    </div>
   )
 }
 export default MainCaruselle;

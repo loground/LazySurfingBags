@@ -3,16 +3,18 @@ import styles from './FlippingCard.module.scss';
 import flipper1 from '../../itemsToUse/flipper1.png';
 import flipper2 from '../../itemsToUse/flipper2.png';
 import Bought from '../../itemsToUse/inCart.png';
+import { ProductProps } from '../../pages/Products';
 
-const Flipper: React.FC = () => {
+interface FlipperProps {
+  buyProd: (product: ProductProps) => void;
+  selectedProduct: ProductProps;
+}
+
+const Flipper: React.FC<FlipperProps> = ({buyProd, selectedProduct}) => {
   const [showBought, setShowBought] = useState(false);
-  const [flipped, setFlipped] = useState(false);
-
-  const flip = () => {
-    setFlipped(!flipped);
-  };
 
   const handleBuyClick = () => {
+    buyProd(selectedProduct);
     setShowBought(!showBought);
   };
 
@@ -23,7 +25,7 @@ const Flipper: React.FC = () => {
         <p>Vova is a freakin' legend and we can watch him surf all day cause it's pure fun</p>
       </div>
       <div className={styles.text_area2}>
-        <p>Vova is a freakin' legend and we can watch him surf all day cause it's pure fun</p>
+        <p>Choose the color of bag you want:</p>
       </div>
       {showBought && <img className={styles.bought_image} src={Bought} alt="Bought" />}
       <button className={styles.button_area} onClick={handleBuyClick}>
@@ -41,7 +43,7 @@ const BlogCard: React.FC = () => {
   };
 
   return (
-    <div onMouseEnter={flip} onMouseLeave={flip} className={`${styles.card_container} ${flipped ? `${styles.flipped}` : ''}`}>
+    <div onMouseEnter={flip} onClick={flip} className={`${styles.card_container} ${flipped ? `${styles.flipped}` : ''}`}>
       <Front />
       <Back />
     </div>
@@ -63,8 +65,8 @@ const Back: React.FC = () => {
         <div className={styles.image_container}>
        <img className={styles.card_image} src={flipper2} alt="Blog Post" />
         <p className={styles.blog_content}>
-            Vova is a legend <br/>
-          And no one can say a word against that cause he is cool AF</p>
+            Vova is a legend
+          And this is back of the card</p>
       </div>
       </div>
   );
@@ -83,8 +85,8 @@ const MainArea: React.FC = () => {
     <div className={styles.main_area}>
       <div className={styles.blog_post}>
         <p className={styles.blog_content}>
-            Vova is a legend <br/>
-          And no one can say a word against that cause he is cool AF</p>
+            Vova is a legend 
+          And this is front of the card</p>
       </div>
     </div>
   );

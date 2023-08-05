@@ -3,11 +3,12 @@ import React from 'react'
 export const Description = () => {
   return (
     <div className="jumbotron">
-        <h1>Custom Jumbotron</h1>
-        <p>
-          Using a series of utilities, you can create this jumbotron, just like the one in previous
-          versions of Bootstrap. Check out the examples below for how you can remix and restyle it
-          to your liking.
+        <h1>Lazy Bags</h1>
+        <p className="mainText">
+          Sorry, we've been kinda way to lazy to make this description, so now it looks like this.
+        </p>
+        <p className="lazyText">
+          Stay lazy! 
         </p>
       </div>
   )

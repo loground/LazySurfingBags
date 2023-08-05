@@ -8,6 +8,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 520px) {
+    width: 520px;
+    height: 50%;
+  }
 }
 
 .backdrop {
@@ -20,6 +24,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 520px) {
+    width: 520px;
+    height: 100%;
+  }
 }
 
 .popup_content {
@@ -29,16 +37,27 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
+  @media (max-width: 520px) {
+    width: 80%;
+    height: 80%;
+  }
 }
 
 .closePopUp {
+  font-family: 'Handjet';
+  font-size: 1.5rem;
   height: 50px;
-  margin-top: -5px; /* Add margin to separate the button from the content */
-  background-color: #d220ff; /* Button background color */
-  color: rgb(83, 1, 83); /* Button text color */
+  margin-top: -5px;
+  background-color: #1b29ef;
+  color: white;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  transition: background-color 0.3s ease;
+  @media (max-width: 520px) {
+    font-size: 1.2rem;
+    height: 45px;
+    width: 358px;
+    margin-left: 10px;
+  }
 }

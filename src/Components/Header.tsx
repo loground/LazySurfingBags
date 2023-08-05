@@ -1,13 +1,15 @@
 import React from 'react';
 import lazylogo from '../itemsToUse/lazylogo2.png';
+import cart from '../itemsToUse/cartver.png';
 import { Link } from 'react-router-dom';
+
 
 
 const Header: React.FC = () => {
   return (
     <div className="header">
         <Link to="/">
-      <img src={lazylogo} width="100px" height="50px" alt="lazysurfbags"></img>
+      <img src={lazylogo} width="120px" height="65px" alt="lazysurfbags"></img>
       </Link>
       <nav className="main-header-nav">
         <ul className="site-navigation">
@@ -28,7 +30,9 @@ const Header: React.FC = () => {
           </li>
         </ul>
         <Link to="/cart">
-        <div className="corner-cart">Cart logo here</div>
+        <div className="corner-cart">
+          <img src={cart} alt='cart-logo' height='65px' width='65px'></img>
+        </div>
         </Link>
       </nav>
     </div>
