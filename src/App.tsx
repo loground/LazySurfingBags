@@ -15,9 +15,18 @@ interface ProductProps {
   audioSrc: string;
 }
 
+interface ColorData {
+  color: string;
+  imageFront: string;
+  imageBack: string;
+  category: string;
+  id: string;
+  desc: string;
+}
+
 function App() {
   const [bagCategories, setBagCategories] = React.useState<ProductProps[]>([]);
-  const [insideCart, setInsideCart] = React.useState<ProductProps[]>([]);
+  const [insideCart, setInsideCart] = React.useState<ColorData[]>([]);
 
   React.useEffect(() => {
     axios.get("https://6481ccc629fa1c5c50321a8b.mockapi.io/Pizza/Bags")
@@ -27,7 +36,11 @@ function App() {
 
   return (
     <Routes>
-      <Route path='products' element={<Products bagCategories={bagCategories} insideCart={insideCart} setInsideCart={setInsideCart} />} />
+      <Route path='products' element={<Products 
+      bagCategories={bagCategories} 
+      insideCart={insideCart}
+      setInsideCart={setInsideCart}
+       />} />
       <Route path="" element={<Home />} />
       <Route path="visuals" element={<Visuals />} />
       <Route path="sale" element={<Sale />} />

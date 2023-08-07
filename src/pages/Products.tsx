@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useState, useEffect, useRef } from 'react';
 import Flipper from '../Components/FlippingCard/FlippingCard';
 import Footer from '../Components/Footer';
@@ -13,10 +12,18 @@ export interface ProductProps {
   id: string;
   audioSrc: string;
 }
+interface ColorData {
+  color: string;
+  imageFront: string;
+  imageBack: string;
+  category: string;
+  id: string;
+  desc: string;
+}
 export interface ProductsProps {
   bagCategories: ProductProps[];
-  insideCart: ProductProps[];
-  setInsideCart: React.Dispatch<React.SetStateAction<ProductProps[]>>;
+  insideCart: ColorData[];
+  setInsideCart: React.Dispatch<React.SetStateAction<ColorData[]>>;
 }
 
 const Products: React.FC<ProductsProps> = ({ bagCategories, setInsideCart }) => {
@@ -31,11 +38,6 @@ const Products: React.FC<ProductsProps> = ({ bagCategories, setInsideCart }) => 
 
   const closePopup = () => {
     setShowPopup(false);
-  };
-
-  const buyProd = async (product: ProductProps) => {
-    await axios.post('https://64c10995fa35860bae9fd16b.mockapi.io/Cart', product);
-    setInsideCart((prevCart) => [...prevCart, product]);
   };
 
   useEffect(() => {
@@ -59,15 +61,24 @@ const Products: React.FC<ProductsProps> = ({ bagCategories, setInsideCart }) => 
     <div
       key={product.id}
     >
-      <img src={product.imageUrl} alt={product.title} onClick={() => openPopup(product)}  onMouseOver={() => {
-        const audioPlayer = document.getElementById(`hoverAudio-${product.id}`) as HTMLAudioElement;
-        audioPlayer.play();
-      }}
-      onMouseOut={() => {
-        const audioPlayer = document.getElementById(`hoverAudio-${product.id}`) as HTMLAudioElement;
-        audioPlayer.pause();
-        audioPlayer.currentTime = 0;
-      }} />
+      <img
+    src={product.imageUrl}
+    alt={product.title}
+    onClick={() => openPopup(product)}
+    onMouseOver={() => {
+      const audioPlayer = document.getElementById(`hoverAudio-${product.id}`) as HTMLAudioElement;
+      const playPromise = audioPlayer.play();
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {}).catch(error => {
+        });
+      }
+    }}
+    onMouseOut={() => {
+      const audioPlayer = document.getElementById(`hoverAudio-${product.id}`) as HTMLAudioElement;
+      audioPlayer.pause();
+      audioPlayer.currentTime = 0;
+    }}
+  />
       <h1 className='product_names'>{product.title}</h1>
       <audio
         id={`hoverAudio-${product.id}`}
@@ -82,7 +93,7 @@ const Products: React.FC<ProductsProps> = ({ bagCategories, setInsideCart }) => 
       {showPopup && selectedProduct && (
         <div className={styles.backdrop}>
           <div className={styles.popup_content} ref={popupRef}>
-            <Flipper buyProd={buyProd} selectedProduct={selectedProduct}/>
+            <Flipper/>
             <button className={styles.closePopUp} onClick={closePopup}>
               Close Popup
             </button>

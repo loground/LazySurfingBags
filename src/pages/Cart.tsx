@@ -6,18 +6,18 @@ import Header from '../Components/Header';
 import empty from '../itemsToUse/emptyCartCool.png';
 import bg from '../itemsToUse/buyingBackground.png';
 import { Link } from 'react-router-dom';
-
-interface CartProductProps {
-  title: string;
-  imageUrl: string;
-  price: string;
+interface ColorData {
+  color: string;
+  imageFront: string;
+  imageBack: string;
+  category: string;
   id: string;
-  audioSrc: string;
+  desc: string;
 }
 
 interface CartProps {
-  insideCart: CartProductProps[];
-  setInsideCart: React.Dispatch<React.SetStateAction<CartProductProps[]>>;
+  insideCart: ColorData[];
+  setInsideCart: React.Dispatch<React.SetStateAction<ColorData[]>>;
 }
 
 const Cart: React.FC<CartProps> = ({ insideCart, setInsideCart }) => {
@@ -56,7 +56,7 @@ const Cart: React.FC<CartProps> = ({ insideCart, setInsideCart }) => {
            <div className='cart-items-container'>
             {insideCart.map((item) => (
               <div className='exactItemInside' key={item.id}>
-                <FlipperCart removeFromCart={() => removeFromCart(item.id)} />
+                <FlipperCart removeFromCart={() => removeFromCart(item.id)} insideCart={item} />
               </div>
             ))}
             </div>
