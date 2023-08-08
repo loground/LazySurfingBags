@@ -270,10 +270,10 @@
   }
   @media (max-width: 420px) {
     margin-top: -10%;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   @media (max-width: 360px) {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -454,14 +454,8 @@
       left: 25%;
     }
     @media (max-width: 420px) {
-      height: 160px;
-      width: 40%;
-      left: 22%;
-    }
-    @media (max-width: 360px) {
-      height: 160px;
-      width: 40%;
-      left: 20%;
+      height: 100%;
+      width: 100%;
     }
 
     h1 {
