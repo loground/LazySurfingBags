@@ -50,22 +50,22 @@
   }
   @media (max-width: 420px) {
     p {
-      font-size: 16px;
+      font-size: 18px;
     }
     li {
-      margin-left: 7px;
+      margin-left: 8px;
     }
     img {
-      height: 60px;
-      width: 110px;
+      height: 40px;
+      width: 90px;
     }
   }
   @media (max-width: 360px) {
     p {
-      font-size: 14px;
+      font-size: 16px;
     }
     li {
-      margin-left: 5px;
+      margin-left: 6px;
     }
     img {
       height: 40px;
@@ -96,14 +96,14 @@
   }
   @media (max-width: 420px) {
     img {
-      margin-top: 14px;
-      height: 30px;
-      width: 30px;
+      margin-top: 12px;
+      height: 35px;
+      width: 35px;
     }
   }
   @media (max-width: 360px) {
     img {
-      margin-top: 8px;
+      margin-top: 10px;
       height: 30px;
       width: 30px;
     }
@@ -141,9 +141,11 @@
   }
   @media (max-width: 420px) {
     width: 100%;
+    height: 50%;
   }
   @media (max-width: 360px) {
     width: 100%;
+    height: 50%;
   }
 }
 
@@ -198,7 +200,11 @@
     width: 50%;
     height: 220px;
   }
-  @media (max-width: 380px) {
+  @media (max-width: 420px) {
+    width: 50%;
+    height: 190px;
+  }
+  @media (max-width: 360px) {
     width: 50%;
     height: 180px;
   }
@@ -218,6 +224,10 @@
   @media (max-width: 520px) {
     width: 50%;
     height: 220px;
+  }
+  @media (max-width: 420px) {
+    width: 50%;
+    height: 190px;
   }
   @media (max-width: 380px) {
     width: 50%;
@@ -243,7 +253,11 @@
   @media (max-width: 520px) {
     font-size: 1.5rem;
   }
-  @media (max-width: 380px) {
+  @media (max-width: 420px) {
+    margin-top: 2%;
+    font-size: 1.4rem;
+  }
+  @media (max-width: 360px) {
     font-size: 1.2rem;
   }
 }
@@ -282,7 +296,7 @@
     font-size: 1.5rem;
   }
   @media (max-width: 380px) {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -368,7 +382,12 @@
     gap: 50px;
     height: 60%;
   }
-  @media (max-width: 380px) {
+  @media (max-width: 420px) {
+    margin-top: 40px;
+    gap: 30px;
+    height: 40%;
+  }
+  @media (max-width: 360px) {
     margin-top: 40px;
     gap: 30px;
     height: 50%;
@@ -413,10 +432,15 @@
       width: 40%;
       left: 25%;
     }
-    @media (max-width: 380px) {
-      height: 180px;
+    @media (max-width: 420px) {
+      height: 160px;
       width: 40%;
-      left: 25%;
+      left: 22%;
+    }
+    @media (max-width: 360px) {
+      height: 160px;
+      width: 40%;
+      left: 20%;
     }
 
     h1 {
@@ -437,7 +461,7 @@
       @media (max-width: 520px) {
         font-size: 0.9rem;
       }
-      @media (max-width: 380px) {
+      @media (max-width: 360px) {
         font-size: 0.7rem;
       }
     }

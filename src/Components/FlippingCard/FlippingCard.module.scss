@@ -25,9 +25,9 @@ $text-margin: 10px;
     padding: 5px;
     transform-style: flat;
   }
-  @media (max-width: 380px) {
-    width: 95%;
-    height: 100%;
+  @media (max-width: 420px) {
+    width: 80%;
+    height: 80%;
     margin: 8px;
     padding: 5px;
     transform-style: flat;
@@ -51,9 +51,16 @@ $text-margin: 10px;
       right: 8px;
       top: 10px;
     }
-    @media (max-width: 380px) {
+    @media (max-width: 420px) {
       width: 50%;
-      height: 420px;
+      height: 60%;
+      transform-style: flat;
+      right: 8px;
+      top: 10px;
+    }
+    @media (max-width: 360px) {
+      width: 50%;
+      height: 55%;
       transform-style: flat;
       right: 5px;
       top: 8px;
@@ -124,7 +131,11 @@ $text-margin: 10px;
           width: 135px;
           height: 360px;
         }
-        @media (max-width: 380px) {
+        @media (max-width: 420px) {
+          width: 120px;
+          height: 320px;
+        }
+        @media (max-width: 360px) {
           width: 120px;
           height: 320px;
         }
@@ -228,6 +239,10 @@ $text-margin: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+  @media (max-width: 420px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .colorsToChoose {
@@ -237,6 +252,11 @@ $text-margin: 10px;
   top: 220px;
   right: 30px;
   width: 250px;
+  @media (max-width: 420px) {
+    font-size: 1.2rem;
+    top: 240px;
+    width: 200px;
+  }
   li {
     background-color: #f0f0f0;
     border-radius: 5px;
@@ -296,7 +316,14 @@ $text-margin: 10px;
     font-size: 1rem;
     top: 525px;
   }
-  @media (max-width: 380px) {
+  @media (max-width: 420px) {
+    position: fixed;
+    width: 358px;
+    left: 0px;
+    font-size: 1rem;
+    top: 500px;
+  }
+  @media (max-width: 360px) {
     width: 320px;
     left: 0px;
     font-size: 0.8rem;
@@ -345,7 +372,7 @@ $text-margin: 10px;
     top: 380px;
     border-radius: 10px;
   }
-  @media (max-width: 520px) {
+  @media (max-width: 420px) {
     width: 85px;
     height: 90px;
     left: 78%;
