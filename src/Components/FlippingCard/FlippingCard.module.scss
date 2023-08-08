@@ -11,8 +11,8 @@ $text-margin: 10px;
   position: absolute;
   box-sizing: border-box;
   @media (max-width: 420px) {
-    height: 50%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -22,16 +22,9 @@ $text-margin: 10px;
   height: 600px;
   display: block;
   perspective: 1000px;
-  @media (max-width: 520px) {
-    width: 95%;
-    height: 100%;
-    margin: 10px;
-    padding: 5px;
-    transform-style: flat;
-  }
   @media (max-width: 420px) {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     padding: 5px;
     transform-style: flat;
   }
@@ -55,8 +48,8 @@ $text-margin: 10px;
       top: 10px;
     }
     @media (max-width: 420px) {
-      width: 50%;
-      height: 60%;
+      width: 100%;
+      height: 100%;
       transform-style: flat;
       right: 0;
     }
@@ -134,8 +127,8 @@ $text-margin: 10px;
           height: 360px;
         }
         @media (max-width: 420px) {
-          width: 120px;
-          height: 320px;
+          width: 80px;
+          height: 220px;
         }
         @media (max-width: 360px) {
           width: 120px;
@@ -204,6 +197,10 @@ $text-margin: 10px;
     width: 100px;
     right: 30px;
   }
+  @media (max-width: 420px) {
+    height: 60%;
+    width: 60%;
+  }
   @media (max-width: 380px) {
     font-size: 0.8rem;
     top: 14px;
@@ -257,7 +254,7 @@ $text-margin: 10px;
   @media (max-width: 420px) {
     font-size: 1.2rem;
     top: 240px;
-    width: 200px;
+    width: 40px;
   }
   li {
     background-color: #f0f0f0;
