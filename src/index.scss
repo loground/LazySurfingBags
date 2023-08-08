@@ -82,7 +82,14 @@
       width: 40px;
     }
   }
-  @media (max-width: 380px) {
+  @media (max-width: 420px) {
+    img {
+      margin-top: 8px;
+      height: 30px;
+      width: 30px;
+    }
+  }
+  @media (max-width: 360px) {
     img {
       margin-top: 8px;
       height: 30px;
