@@ -68,15 +68,13 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   @media (max-width: 520px) {
-    margin-top: 1px;
     font-size: 1.2rem;
     height: 35px;
     width: 100%;
   }
   @media (max-width: 420px) {
-    margin-top: 1px;
     font-size: 1.2rem;
-    height: 35px;
+    height: 30px;
     width: 100%;
   }
 }
