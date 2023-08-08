@@ -209,7 +209,7 @@ $text-margin: 10px;
   @media (max-width: 420px) {
     font-size: 1rem;
     top: 22px;
-    width: 160px;
+    width: 120px;
     right: 20px;
   }
   @media (max-width: 380px) {
@@ -235,6 +235,12 @@ $text-margin: 10px;
     font-size: 1rem;
     top: 140px;
     width: 160px;
+    right: 20px;
+  }
+  @media (max-width: 420px) {
+    font-size: 1rem;
+    top: 140px;
+    width: 120px;
     right: 20px;
   }
   @media (max-width: 380px) {
@@ -275,7 +281,7 @@ $text-margin: 10px;
   @media (max-width: 420px) {
     font-size: 1.2rem;
     top: 210px;
-    width: 160px;
+    width: 120px;
     right: 20px;
   }
   li {
@@ -343,7 +349,7 @@ $text-margin: 10px;
     height: 50px;
     left: 0px;
     font-size: 1rem;
-    top: 545px;
+    top: 520px;
   }
   @media (max-width: 360px) {
     width: 320px;
@@ -395,7 +401,7 @@ $text-margin: 10px;
     border-radius: 10px;
   }
   @media (max-width: 420px) {
-    width: 160px;
+    width: 120px;
     height: 140px;
     left: 75%;
     top: 380px;
