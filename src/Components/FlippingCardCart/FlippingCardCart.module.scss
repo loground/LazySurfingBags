@@ -20,6 +20,9 @@ $text-margin: 10px;
     @media (max-width: 520px) {
       height: 480px;
     }
+    @media (max-width: 380px) {
+      height: 420px;
+    }
 
     &.flipped {
       .front {

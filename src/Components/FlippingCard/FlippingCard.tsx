@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './FlippingCard.module.scss';
 import Bought from '../../itemsToUse/inCart.png';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const defaultColorData = {
   color: "Yellow",
@@ -95,9 +96,11 @@ const Flipper: React.FC = () => {
           </li>
         </ul>
       </div>
+      <Link to="/cart">
       {showBought && <img className={styles.bought_image} src={Bought} alt="Bought" />}
+      </Link>
       <button className={styles.button_area} onClick={buyColoredBag}>
-        {showBought ? 'You made these guys happy' : 'Купить'}
+        {showBought ? 'You made these guys happy, click!' : 'Купить'}
       </button>
     </div>
   );

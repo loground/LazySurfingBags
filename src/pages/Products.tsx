@@ -4,7 +4,6 @@ import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import styles from './Popup.module.scss';
 
-
 export interface ProductProps {
   title: string;
   imageUrl: string;

@@ -23,7 +23,14 @@ $text-margin: 10px;
     height: 100%;
     margin: 10px;
     padding: 5px;
-    transform-style: flat; /* Change transform-style to flat for better performance on some mobile devices */
+    transform-style: flat;
+  }
+  @media (max-width: 380px) {
+    width: 95%;
+    height: 100%;
+    margin: 8px;
+    padding: 5px;
+    transform-style: flat;
   }
 
   .card_container {
@@ -43,6 +50,13 @@ $text-margin: 10px;
       transform-style: flat;
       right: 8px;
       top: 10px;
+    }
+    @media (max-width: 380px) {
+      width: 50%;
+      height: 420px;
+      transform-style: flat;
+      right: 5px;
+      top: 8px;
     }
 
     &.flipped {
@@ -80,6 +94,9 @@ $text-margin: 10px;
       @media (max-width: 520px) {
         font-size: 1rem;
       }
+      @media (max-width: 520px) {
+        font-size: 0.8rem;
+      }
     }
 
     .back {
@@ -90,6 +107,9 @@ $text-margin: 10px;
       font-size: 1.5rem;
       @media (max-width: 520px) {
         font-size: 1rem;
+      }
+      @media (max-width: 380px) {
+        font-size: 0.8rem;
       }
     }
 
@@ -103,6 +123,10 @@ $text-margin: 10px;
         @media (max-width: 520px) {
           width: 135px;
           height: 360px;
+        }
+        @media (max-width: 380px) {
+          width: 120px;
+          height: 320px;
         }
       }
 
@@ -167,6 +191,12 @@ $text-margin: 10px;
     width: 100px;
     right: 30px;
   }
+  @media (max-width: 380px) {
+    font-size: 0.8rem;
+    top: 14px;
+    width: 80px;
+    right: 15px;
+  }
 }
 
 .text_area2 {
@@ -185,6 +215,12 @@ $text-margin: 10px;
     top: 155px;
     width: 100px;
     right: 30px;
+  }
+  @media (max-width: 380px) {
+    font-size: 0.8rem;
+    top: 155px;
+    width: 80px;
+    right: 25px;
   }
 }
 
@@ -233,6 +269,12 @@ $text-margin: 10px;
     right: 0;
     bottom: 10px;
   }
+  @media (max-width: 380px) {
+    width: 50%;
+    height: 35%;
+    right: 0;
+    bottom: 10px;
+  }
 }
 
 .button_area {
@@ -247,11 +289,18 @@ $text-margin: 10px;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
   @media (max-width: 520px) {
     width: 358px;
     left: 0px;
     font-size: 1rem;
     top: 525px;
+  }
+  @media (max-width: 380px) {
+    width: 320px;
+    left: 0px;
+    font-size: 0.8rem;
+    top: 480px;
   }
 }
 
@@ -292,6 +341,13 @@ $text-margin: 10px;
   @media (max-width: 520px) {
     width: 95px;
     height: 100px;
+    left: 78%;
+    top: 380px;
+    border-radius: 10px;
+  }
+  @media (max-width: 520px) {
+    width: 85px;
+    height: 90px;
     left: 78%;
     top: 380px;
     border-radius: 10px;
