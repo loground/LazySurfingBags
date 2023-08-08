@@ -10,6 +10,10 @@ $text-margin: 10px;
   font-family: $main-font;
   position: absolute;
   box-sizing: border-box;
+  @media (max-width: 420px) {
+    height: 90%;
+    width: 90%;
+  }
 }
 
 .page_container {
@@ -28,7 +32,6 @@ $text-margin: 10px;
   @media (max-width: 420px) {
     width: 80%;
     height: 80%;
-    margin: 8px;
     padding: 5px;
     transform-style: flat;
   }
@@ -55,8 +58,7 @@ $text-margin: 10px;
       width: 50%;
       height: 60%;
       transform-style: flat;
-      right: 8px;
-      top: 10px;
+      right: 0;
     }
     @media (max-width: 360px) {
       width: 50%;
