@@ -191,6 +191,9 @@
   margin: 0px;
   position: relative;
   line-height: 0;
+  @media (max-width: 420px) {
+    margin-top: -20px;
+  }
 }
 
 .render1 {
