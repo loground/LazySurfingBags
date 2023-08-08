@@ -250,6 +250,9 @@
 .jumbotron {
   padding: 3rem;
   background-color: rgb(255, 255, 255);
+  @media (max-width: 420px) {
+    height: 80%;
+  }
 }
 
 .jumbotron h1 {
