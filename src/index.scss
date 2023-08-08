@@ -161,6 +161,11 @@
 .image-container img {
   width: 100%;
   height: 100%;
+  @media (max-width: 420px) {
+    width: 100%;
+    height: 80%;
+    position: relative;
+  }
 }
 
 .image-container::before {
