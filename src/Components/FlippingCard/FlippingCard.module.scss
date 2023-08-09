@@ -318,6 +318,13 @@ $text-margin: 10px;
     bottom: 10px;
     position: fixed;
   }
+  @media (max-width: 420px) {
+    width: 50%;
+    height: 40%;
+    right: 0;
+    bottom: 10px;
+    position: fixed;
+  }
   @media (max-width: 380px) {
     width: 50%;
     height: 35%;
