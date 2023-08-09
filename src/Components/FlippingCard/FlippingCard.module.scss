@@ -13,9 +13,6 @@ $text-margin: 10px;
   @media (max-width: 520px) {
   }
   @media (max-width: 420px) {
-    height: 100%;
-    width: 100%;
-    position: fixed;
   }
 }
 
@@ -127,9 +124,6 @@ $text-margin: 10px;
 
     .image_container {
       position: relative;
-      @media (max-width: 420px) {
-        position: fixed;
-      }
 
       .card_image {
         width: 100%;
