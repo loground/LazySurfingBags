@@ -99,7 +99,7 @@ const Products: React.FC<ProductsProps> = ({ bagCategories, setInsideCart }) => 
           </div>
         </div>
       )}
-       <Footer/>
+      <Footer/>
     </div>
   );
 };
