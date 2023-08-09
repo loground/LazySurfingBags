@@ -1,4 +1,5 @@
 import { Carousel } from 'react-carousel-minimal';
+import styles from './VisualsCarousel.module.scss';
 import img1 from '../../itemsToUse/img1.png';
 import img2 from '../../itemsToUse/img2.png';
 import img3 from '../../itemsToUse/img3.png';
@@ -56,7 +57,7 @@ const VisualsCarousel = () => {
     fontWeight: 'bold',
   }
   return (
-    <div className="App">
+    <div className={styles.App}>
       <div style={{ textAlign: "center" }}>
         <div style={{
         }}>
