@@ -103,7 +103,7 @@
   }
   @media (max-width: 360px) {
     img {
-      margin-top: 10px;
+      margin-top: 6px;
       height: 30px;
       width: 30px;
     }
@@ -216,6 +216,10 @@
     width: 50%;
     height: 190px;
   }
+  @media (max-width: 380px) {
+    width: 50%;
+    height: 180px;
+  }
   @media (max-width: 360px) {
     width: 50%;
     height: 180px;
@@ -242,6 +246,10 @@
     height: 190px;
   }
   @media (max-width: 380px) {
+    width: 50%;
+    height: 180px;
+  }
+  @media (max-width: 360px) {
     width: 50%;
     height: 180px;
   }
@@ -273,7 +281,7 @@
     font-size: 1.6rem;
   }
   @media (max-width: 360px) {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -317,7 +325,7 @@
     font-size: 1.4rem;
   }
   @media (max-width: 380px) {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -661,14 +669,24 @@
     }
   }
   @media (max-width: 380px) {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     align-items: center;
     padding-top: 6%;
     img {
-      height: 35%;
-      width: 87%;
-      padding-left: 5%;
-      padding-top: 10%;
+      height: 100%;
+      width: 80%;
+      padding-top: 50;
+    }
+  }
+  @media (max-width: 380px) {
+    font-size: 1.6rem;
+    align-items: center;
+    padding-top: 6%;
+    img {
+      height: 100%;
+      width: 85%;
+      padding-top: 50;
+      margin-bottom: 28px;
     }
   }
 }
@@ -699,7 +717,7 @@
       font-size: 2.2rem;
     }
     @media (max-width: 380px) {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
     }
   }
 }

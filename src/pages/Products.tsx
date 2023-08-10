@@ -31,7 +31,6 @@ const Products: React.FC<ProductsProps> = ({ bagCategories, setInsideCart }) => 
   const [selectedProduct, setSelectedProduct] = useState<ProductProps | null>(null);
 
   const openPopup = (product: ProductProps) => {
-    document.body.classList.add(styles.no_scroll);
     setSelectedProduct(product);
     setShowPopup(true);
   };
