@@ -13,6 +13,8 @@ interface ProductProps {
   price: string;
   id: string;
   audioSrc: string;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface ColorData {
@@ -27,11 +29,18 @@ interface ColorData {
 function App() {
   const [bagCategories, setBagCategories] = React.useState<ProductProps[]>([]);
   const [insideCart, setInsideCart] = React.useState<ColorData[]>([]);
+  const [isLoading, setIsLoading] = React.useState(true)
 
   React.useEffect(() => {
     axios.get("https://6481ccc629fa1c5c50321a8b.mockapi.io/Pizza/Bags")
-      .then((response) => setBagCategories(response.data))
-      .catch((error) => console.error("Error fetching data:", error));
+      .then((response) => {
+        setBagCategories(response.data);
+        setIsLoading(false); 
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setIsLoading(false); 
+      });
   }, []);
 
   return (
@@ -40,6 +49,8 @@ function App() {
       bagCategories={bagCategories} 
       insideCart={insideCart}
       setInsideCart={setInsideCart}
+      isLoading={isLoading}
+      setIsLoading={setIsLoading}
        />} />
       <Route path="" element={<Home />} />
       <Route path="visuals" element={<Visuals />} />
