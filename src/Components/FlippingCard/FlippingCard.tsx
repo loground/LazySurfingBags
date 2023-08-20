@@ -3,6 +3,10 @@ import styles from './FlippingCard.module.scss';
 import Bought from '../../itemsToUse/inCart.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { RootState } from '../../Redux/store';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { setColor } from '../../Redux/colorSlice/color';
 
 const defaultColorData = {
   color: "Yellow",
@@ -23,13 +27,14 @@ interface ColorData {
 }
 
 const Flipper: React.FC = () => {
+  const dispatch = useDispatch();
+  const activeColor = useSelector((state: RootState) => state.color);
   const [showBought, setShowBought] = useState(false);
-  const [activeColor, setActiveColor] = useState('Yellow');
   const [colorChosen, setColorChosen] = useState<ColorData | null>(defaultColorData);
 
   useEffect(() => {
     const url = new URL(`https://64c10995fa35860bae9fd16b.mockapi.io/Colors`);
-    url.searchParams.append('color', activeColor);
+    url.searchParams.append('color', activeColor.color);
     axios
       .get(url.toString())
       .then((response) => {
@@ -46,7 +51,7 @@ const Flipper: React.FC = () => {
   }, [activeColor]);
 
   const handleChooseColor = (color: string) => {
-    setActiveColor(color);
+    dispatch(setColor({ color: color }));
     setShowBought(false);
   };
 
@@ -71,25 +76,25 @@ const Flipper: React.FC = () => {
       <div className={styles.colorsToChoose}>
       <ul className={styles.twoColumns}>
           <li
-            className={activeColor === 'Sand' ? styles.activeColor : ''}
+            className={activeColor.color === 'Sand' ? styles.activeColor : ''}
             onClick={() => handleChooseColor('Sand')}
           >
             Sand
           </li>
           <li
-            className={activeColor === 'Purple' ? styles.activeColor : ''}
+            className={activeColor.color === 'Purple' ? styles.activeColor : ''}
             onClick={() => handleChooseColor('Purple')}
           >
             Purple
           </li>
           <li
-            className={activeColor === 'Yellow' ? styles.activeColor : ''}
+            className={activeColor.color === 'Yellow' ? styles.activeColor : ''}
             onClick={() => handleChooseColor('Yellow')}
           >
             Yellow
           </li>
           <li
-            className={activeColor === 'Navy' ? styles.activeColor : ''}
+            className={activeColor.color === 'Navy' ? styles.activeColor : ''}
             onClick={() => handleChooseColor('Navy')}
           >
             Navy

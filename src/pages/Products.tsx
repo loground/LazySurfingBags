@@ -12,23 +12,13 @@ export interface ProductProps {
   id: string;
   audioSrc: string;
 }
-interface ColorData {
-  color: string;
-  imageFront: string;
-  imageBack: string;
-  category: string;
-  id: string;
-  desc: string;
-}
 export interface ProductsProps {
   bagCategories: ProductProps[];
-  insideCart: ColorData[];
-  setInsideCart: React.Dispatch<React.SetStateAction<ColorData[]>>;
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Products: React.FC<ProductsProps> = ({ bagCategories, setInsideCart, isLoading, setIsLoading }) => {
+const Products: React.FC<ProductsProps> = ({ bagCategories, isLoading }) => {
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
   const [selectedProduct, setSelectedProduct] = useState<ProductProps | null>(null);

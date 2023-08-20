@@ -446,12 +446,16 @@
       width: 42%;
       height: 480px;
     }
+    @media (max-width: 1470px) {
+      width: 35%;
+      height: 480px;
+    }
     @media (max-width: 1280px) {
-      width: 42%;
+      width: 40%;
       height: 480px;
     }
     @media (max-width: 1175px) {
-      width: 42%;
+      width: 40%;
       height: 480px;
     }
     @media (max-width: 1112px) {
@@ -460,6 +464,11 @@
     }
     @media (max-width: 900px) {
       height: 280px;
+    }
+    @media (max-width: 699px) {
+      height: 200px;
+      width: 40%;
+      left: 25%;
     }
     @media (max-width: 590px) {
       height: 240px;

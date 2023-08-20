@@ -27,11 +27,9 @@ export default function Card() {
   }
 
   function handleMouseEnter() {
-    // ... (same as before)
   }
 
   function handleMouseLeave() {
-    // ... (same as before)
   }
 
   function handlePurchaseClick() {

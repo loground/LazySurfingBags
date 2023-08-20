@@ -1,5 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './Redux/store';
 import Products from './pages/Products';
 import Visuals from './pages/Visuals';
 import Sale from './pages/Sale';
@@ -17,18 +19,8 @@ interface ProductProps {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-interface ColorData {
-  color: string;
-  imageFront: string;
-  imageBack: string;
-  category: string;
-  id: string;
-  desc: string;
-}
-
 function App() {
   const [bagCategories, setBagCategories] = React.useState<ProductProps[]>([]);
-  const [insideCart, setInsideCart] = React.useState<ColorData[]>([]);
   const [isLoading, setIsLoading] = React.useState(true)
 
   React.useEffect(() => {
@@ -44,19 +36,20 @@ function App() {
   }, []);
 
   return (
+    <Provider store={store}>
     <Routes>
       <Route path='products' element={<Products 
       bagCategories={bagCategories} 
-      insideCart={insideCart}
-      setInsideCart={setInsideCart}
+      //добавить сюда из редакса кнопки
       isLoading={isLoading}
       setIsLoading={setIsLoading}
        />} />
       <Route path="" element={<Home />} />
       <Route path="visuals" element={<Visuals />} />
       <Route path="sale" element={<Sale />} />
-      <Route path="cart" element={<Cart insideCart={insideCart} setInsideCart={setInsideCart} />} />
+      <Route path="cart" element={<Cart />} />
     </Routes>
+    </Provider>
   );
 }
 
