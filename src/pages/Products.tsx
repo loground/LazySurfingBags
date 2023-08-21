@@ -5,6 +5,10 @@ import Header from '../Components/Header';
 import ProductSkeleton from '../Components/Skeleton/ProductSkeleton';
 import styles from './Popup.module.scss';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { selectLoadingStatus, selectBagCategories, fetchBagCategories } from '../Redux/productsSlice/products';
+import { AppDispatch } from '../Redux/store';
+
 export interface ProductProps {
   title: string;
   imageUrl: string;
@@ -12,16 +16,18 @@ export interface ProductProps {
   id: string;
   audioSrc: string;
 }
-export interface ProductsProps {
-  bagCategories: ProductProps[];
-  isLoading: boolean;
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
-const Products: React.FC<ProductsProps> = ({ bagCategories, isLoading }) => {
+const Products: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const bagCategories = useSelector(selectBagCategories);
+  const isLoading = useSelector(selectLoadingStatus);
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
   const [selectedProduct, setSelectedProduct] = useState<ProductProps | null>(null);
+
+  React.useEffect(() => {
+    dispatch(fetchBagCategories());
+  }, [dispatch]);
 
   const openPopup = (product: ProductProps) => {
     setSelectedProduct(product);
