@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-color: "Yellow",
-}
+  color: "Yellow",
+};
 
 const colorSlice = createSlice({
-  name: 'color',
+  name: "color",
   initialState,
   reducers: {
     setColor: (state, action) => {

@@ -1,4 +1,4 @@
-$main-font: 'Yanone Kaffeesatz', sans-serif;
+$main-font: "Yanone Kaffeesatz", sans-serif;
 $new-white: rgb(248, 246, 234);
 $text-margin: 10px;
 
@@ -74,7 +74,7 @@ $text-margin: 10px;
         margin-bottom: $text-margin;
         align-items: flex-start;
         color: black;
-        font-family: 'Handjet';
+        font-family: "Handjet";
         font-size: 2rem;
         @media (max-width: 420px) {
           font-size: 1.5rem;
@@ -151,7 +151,7 @@ $text-margin: 10px;
   padding: 10px;
   background-color: #ff09e2;
   color: black;
-  font-family: 'Handjet';
+  font-family: "Handjet";
   font-size: 22px;
   cursor: pointer;
   @media (max-width: 420px) {
@@ -168,7 +168,7 @@ $text-margin: 10px;
   background-color: #0c9d6a;
   cursor: pointer;
   color: black;
-  font-family: 'Handjet';
+  font-family: "Handjet";
   font-size: 22px;
   @media (max-width: 420px) {
     width: 100%;

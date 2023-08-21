@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import styles from './FlippingCardCart.module.scss';
-import vid from '../../itemsToUse/cashout.mp4'
+import React, { useState } from "react";
+import styles from "./FlippingCardCart.module.scss";
+//Files
+import vid from "../../itemsToUse/cashout.mp4";
 
 interface ColorData {
   color: string;
@@ -16,7 +17,10 @@ interface FlipperCartProps {
   insideCart: ColorData;
 }
 
-const FlipperCart: React.FC<FlipperCartProps> = ({ removeFromCart, insideCart }) => {
+const FlipperCart: React.FC<FlipperCartProps> = ({
+  removeFromCart,
+  insideCart,
+}) => {
   const [showVideo, setShowVideo] = useState(false);
 
   const handleVideoEnd = () => {
@@ -32,7 +36,12 @@ const FlipperCart: React.FC<FlipperCartProps> = ({ removeFromCart, insideCart })
       {showVideo ? (
         <div className={styles.video_wrapper}>
           <div className={styles.video_area}>
-            <video className={styles.video} controls autoPlay onEnded={handleVideoEnd}>
+            <video
+              className={styles.video}
+              controls
+              autoPlay
+              onEnded={handleVideoEnd}
+            >
               <source src={vid} type="video/mp4" />
             </video>
           </div>
@@ -67,7 +76,9 @@ const BlogCard: React.FC<BlogCardProps> = ({ item }) => {
     <div
       onMouseEnter={handleFlip}
       onClick={handleFlip}
-      className={`${styles.card_container} ${flipped ? `${styles.flipped}` : ''}`}
+      className={`${styles.card_container} ${
+        flipped ? `${styles.flipped}` : ""
+      }`}
     >
       <Front item={item} />
       <Back item={item} />
@@ -82,12 +93,8 @@ interface FrontProps {
 const Front: React.FC<FrontProps> = ({ item }) => {
   return (
     <div className={styles.front}>
-      {item ? (
-        <ImageArea imageSrc={item.imageFront} />
-      ) : (
-        <div>Loading</div>
-      )}
-      <MainArea item={item}/>
+      {item ? <ImageArea imageSrc={item.imageFront} /> : <div>Loading</div>}
+      <MainArea item={item} />
     </div>
   );
 };
@@ -106,7 +113,6 @@ const ImageArea: React.FC<ImageAreaProps> = ({ imageSrc }) => {
     </div>
   );
 };
-
 
 interface MainAreaProps {
   item: ColorData;
@@ -127,7 +133,11 @@ const Back: React.FC<FrontProps> = ({ item }) => {
     <div className={styles.back}>
       {item ? (
         <div className={styles.image_container}>
-          <img className={styles.card_image} src={item.imageBack} alt="Blog Post" />
+          <img
+            className={styles.card_image}
+            src={item.imageBack}
+            alt="Blog Post"
+          />
           <p className={styles.blog_content}>{item.desc}</p>
         </div>
       ) : (

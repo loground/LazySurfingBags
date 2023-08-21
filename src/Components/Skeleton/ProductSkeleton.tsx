@@ -1,8 +1,7 @@
-import React from "react"
-import ContentLoader from "react-content-loader"
+import ContentLoader from "react-content-loader";
 
 const ProductSkeleton = () => (
-  <ContentLoader 
+  <ContentLoader
     speed={2}
     width={600}
     height={600}
@@ -12,6 +11,6 @@ const ProductSkeleton = () => (
   >
     <circle cx="301" cy="263" r="255" />
   </ContentLoader>
-)
+);
 
-export default ProductSkeleton
+export default ProductSkeleton;

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import styles from "./Card.module.scss";
-import cart from '../../itemsToUse/cart.png'
-import vova from '../../itemsToUse/vovanotforsale.png'
+import cart from "../../itemsToUse/cart.png";
+import vova from "../../itemsToUse/vovanotforsale.png";
 
 export default function Card() {
   const [xRotation, setXRotation] = useState<number>(0);
@@ -18,7 +18,9 @@ export default function Card() {
     if (!card) return;
 
     const { offsetWidth: width, offsetHeight: height } = card;
-    const { nativeEvent: { offsetX, offsetY } } = event;
+    const {
+      nativeEvent: { offsetX, offsetY },
+    } = event;
     const x = offsetX - width / 2;
     const y = offsetY - height / 2;
     var mult = 40;
@@ -26,11 +28,9 @@ export default function Card() {
     setYRotation((x / width) * mult);
   }
 
-  function handleMouseEnter() {
-  }
+  function handleMouseEnter() {}
 
-  function handleMouseLeave() {
-  }
+  function handleMouseLeave() {}
 
   function handlePurchaseClick() {
     setIsPurchased((prevState) => !prevState);
@@ -57,9 +57,7 @@ export default function Card() {
       <h1 className="title" ref={titleRef}>
         Lazy Surf Bag
       </h1>
-      <p ref={descRef}>
-        {isPurchased ? "Vova is not for sale" : "cool bag"}
-      </p>
+      <p ref={descRef}>{isPurchased ? "Vova is not for sale" : "cool bag"}</p>
       <div className="button-box" ref={purchaseRef}>
         <button className="purchase" onClick={handlePurchaseClick}>
           {isPurchased ? "Vova can't be purchased" : "Purchase"}

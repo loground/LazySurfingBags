@@ -1,10 +1,15 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const fetchCartItems = createAsyncThunk('cart/fetchCartItems', async () => {
-  const response = await axios.get('https://64c10995fa35860bae9fd16b.mockapi.io/Cart');
-  return response.data;
-});
+export const fetchCartItems = createAsyncThunk(
+  "cart/fetchCartItems",
+  async () => {
+    const response = await axios.get(
+      "https://64c10995fa35860bae9fd16b.mockapi.io/Cart",
+    );
+    return response.data;
+  },
+);
 
 interface CartItem {
   id: string;
@@ -26,23 +31,23 @@ const initialState: CartState = {
 };
 
 const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
   reducers: {
     removeFromCart: (state, action: PayloadAction<string>): void => {
-      state.items = state.items.filter(item => item.id !== action.payload);
+      state.items = state.items.filter((item) => item.id !== action.payload);
     },
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
-      .addCase(fetchCartItems.pending, state => {
+      .addCase(fetchCartItems.pending, (state) => {
         state.loading = true;
       })
       .addCase(fetchCartItems.fulfilled, (state, action) => {
         state.items = action.payload;
         state.loading = false;
       })
-      .addCase(fetchCartItems.rejected, state => {
+      .addCase(fetchCartItems.rejected, (state) => {
         state.loading = false;
       });
   },

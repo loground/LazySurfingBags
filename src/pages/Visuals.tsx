@@ -1,15 +1,13 @@
-import React from 'react'
-import Header from '../Components/Header';
-import VisualsCarousel from '../Components/VisualsCarousel/VisualsCarousel';
-
+import Header from "../Components/Header";
+import VisualsCarousel from "../Components/VisualsCarousel/VisualsCarousel";
 
 const Visuals = () => {
   return (
     <div>
-        <Header/>
-        <VisualsCarousel />
+      <Header />
+      <VisualsCarousel />
     </div>
-  )
-}
+  );
+};
 
 export default Visuals;
