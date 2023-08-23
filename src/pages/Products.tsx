@@ -57,7 +57,6 @@ const Products: React.FC = () => {
       }
     };
     document.addEventListener("mousedown", handleOutsideClick);
-
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };

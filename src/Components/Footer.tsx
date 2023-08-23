@@ -1,4 +1,3 @@
-import React from "react";
 import instalogo from "../itemsToUse/instalogo.png";
 import logo from "../itemsToUse/lazylogo2.png";
 

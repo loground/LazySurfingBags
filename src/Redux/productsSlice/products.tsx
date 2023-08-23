@@ -38,7 +38,7 @@ const productsSlice = createSlice({
         console.log("загружаю");
       })
       .addCase(fetchBagCategories.fulfilled, (state, action) => {
-        state.bagCategories = [...state.bagCategories, ...action.payload];
+        state.bagCategories = action.payload; 
         state.isLoading = false;
         console.log("загружено");
       })

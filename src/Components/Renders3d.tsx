@@ -9,7 +9,7 @@ const Renders3d = () => {
       <Link to="/products">
         <img src={renderTwo} alt="left" className="render1" />
       </Link>
-      <Link to="/sale">
+      <Link to="/map">
         <img src={renderOne} alt="right" className="render2" />
       </Link>
     </div>
