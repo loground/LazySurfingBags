@@ -6,6 +6,7 @@ import FlipperCart from "../Components/FlippingCardCart/FlippingCardCart";
 import SkeletonCart from "../Components/Skeleton/SkeletonCart";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
+import OrderModal from "../Components/Modal/Modal";
 //Files
 import empty from "../itemsToUse/emptyCartCool.png";
 import bg from "../itemsToUse/buyingBackground.png";
@@ -20,6 +21,15 @@ import { ThunkDispatch } from "redux-thunk";
 const Cart: React.FC = () => {
   const dispatch = useDispatch<ThunkDispatch<RootState, null, any>>();
   const { items, loading } = useSelector((state: RootState) => state.cart);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const removeFromCartRedux = async (itemId: string) => {
     dispatch(removeFromCart(itemId));
@@ -55,7 +65,8 @@ const Cart: React.FC = () => {
             className="itemsInCart"
             style={{ backgroundImage: `url(${bg})` }}
           >
-            <h1>You damn legend about to buy this:</h1>
+            <h1>You damn legend about to buy this: <button onClick={openModal}>Оформить заказ</button></h1>
+            <OrderModal isOpen={isModalOpen} onClose={closeModal} />
             <div className="cart-items-container">
               {items.map((item) => (
                 <div className="exactItemInside" key={item.id}>

@@ -52,9 +52,6 @@ const FlipperCart: React.FC<FlipperCartProps> = ({
           <button className={styles.button_area} onClick={removeFromCart}>
             Удалить из корзины
           </button>
-          <button className={styles.buy_button} onClick={handleBuyClick}>
-            Купить
-          </button>
         </>
       )}
     </div>
