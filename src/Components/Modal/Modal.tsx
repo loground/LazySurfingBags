@@ -33,7 +33,7 @@ const OrderModal: React.FC<OrderModalProps> = ({ isOpen, onClose }) => {
   return (
     <div className={styles.modal_overlay}>
       <div className={styles.modal_content} ref={popupRef}>
-        <Form/>
+        <Form onClose={onClose}/>
         <button className={styles.modal_close_button} onClick={onClose}>
           Close
         </button>

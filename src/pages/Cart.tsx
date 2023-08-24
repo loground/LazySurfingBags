@@ -65,7 +65,7 @@ const Cart: React.FC = () => {
             className="itemsInCart"
             style={{ backgroundImage: `url(${bg})` }}
           >
-            <h1>You damn legend about to buy this: <button onClick={openModal}>Оформить заказ</button></h1>
+            <h1>You damn legend about to buy this: <button className="makeOrder" onClick={openModal}>Оформить заказ</button></h1>
             <OrderModal isOpen={isModalOpen} onClose={closeModal} />
             <div className="cart-items-container">
               {items.map((item) => (

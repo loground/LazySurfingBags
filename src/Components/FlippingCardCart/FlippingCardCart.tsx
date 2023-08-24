@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styles from "./FlippingCardCart.module.scss";
-//Files
-import vid from "../../itemsToUse/cashout.mp4";
 
 interface ColorData {
   color: string;
@@ -21,39 +19,15 @@ const FlipperCart: React.FC<FlipperCartProps> = ({
   removeFromCart,
   insideCart,
 }) => {
-  const [showVideo, setShowVideo] = useState(false);
-
-  const handleVideoEnd = () => {
-    setShowVideo(false);
-  };
-
-  const handleBuyClick = () => {
-    setShowVideo(true);
-  };
 
   return (
     <div className={`${styles.page_container}`}>
-      {showVideo ? (
-        <div className={styles.video_wrapper}>
-          <div className={styles.video_area}>
-            <video
-              className={styles.video}
-              controls
-              autoPlay
-              onEnded={handleVideoEnd}
-            >
-              <source src={vid} type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      ) : (
-        <>
-          <BlogCard item={insideCart} />
-          <button className={styles.button_area} onClick={removeFromCart}>
-            Удалить из корзины
-          </button>
-        </>
-      )}
+      <>
+        <BlogCard item={insideCart} />
+        <button className={styles.button_area} onClick={removeFromCart}>
+          Удалить из корзины
+        </button>
+      </>
     </div>
   );
 };

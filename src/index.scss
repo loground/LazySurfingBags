@@ -725,7 +725,9 @@
   background-position: center;
   background-attachment: fixed;
   h1 {
+    gap: 15px;
     color: white;
+    display: flex;
     @media (max-width: 900px) {
       font-size: 3rem;
     }
@@ -817,6 +819,19 @@
 
 .audio-player {
   display: none;
+}
+
+.makeOrder {
+  margin-top: 2.3%;
+  height: 5vh;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 @keyframes spin {
