@@ -1,4 +1,5 @@
 import React from "react";
+import Form from "../Form/Form";
 import styles from "./Modal.module.scss";
 
 interface OrderModalProps {
@@ -32,7 +33,7 @@ const OrderModal: React.FC<OrderModalProps> = ({ isOpen, onClose }) => {
   return (
     <div className={styles.modal_overlay}>
       <div className={styles.modal_content} ref={popupRef}>
-        <h2>Place Your Order</h2>
+        <Form/>
         <button className={styles.modal_close_button} onClick={onClose}>
           Close
         </button>

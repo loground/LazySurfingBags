@@ -1,0 +1,68 @@
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 60vh;
+  width: 60vh;
+  margin-bottom: 35%;
+}
+
+.nameInput {
+  padding: 0.5rem;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.mailInput {
+  padding: 0.5rem;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+input[type='text'],
+select {
+  padding: 0.5rem;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type='submit'] {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #f53ef8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 8vh;
+  width: 20vh;
+}
+
+input[type='submit']:hover {
+  background-color: #0056b3;
+}
