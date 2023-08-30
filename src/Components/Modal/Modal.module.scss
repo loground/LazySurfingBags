@@ -48,6 +48,10 @@
     width: 8%;
     left: 26%;
   }
+  @media (max-width: 420px) {
+    width: 15%;
+    left: 20%;
+  }
   @media (max-width: 375px) {
     font-size: 1.5rem;
     width: 15%;
