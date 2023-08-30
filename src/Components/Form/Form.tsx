@@ -1,8 +1,9 @@
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import React from "react";
 import styles from './FormStyles.module.scss';
 import vid from "../../itemsToUse/cashout.mp4"; 
-
+import { clearCart } from "../../Redux/cartSlice/cart";
+import { useDispatch } from "react-redux";
 
 interface IFormInput {
   firstName: string;
@@ -10,18 +11,24 @@ interface IFormInput {
   delivery: string;
 }
 
-function Form({ onClose }: { onClose: () => void }) {
-  const { register, handleSubmit } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    handleBuyClick();
-    console.log(data);
-  };
+interface FormProps {
+  onClose: () => void;
+}
 
-  const [showVideo, setShowVideo] = React.useState(false);
+function Form({ onClose }: FormProps) {
+  const dispatch = useDispatch();
+  const { register, handleSubmit } = useForm<IFormInput>();
+  
+  const [showVideo, setShowVideo] = useState(false);
 
   const handleVideoEnd = () => {
     setShowVideo(false);
+    dispatch(clearCart());
     onClose();
+  };
+
+  const onSubmit: SubmitHandler<IFormInput> = () => {
+    handleBuyClick();
   };
 
   const handleBuyClick = () => {
@@ -30,6 +37,19 @@ function Form({ onClose }: { onClose: () => void }) {
 
   return (
     <div className={styles.formWrapper}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <label className={styles.label}>Твоё имя, красавец</label>
+        <input className={styles.nameInput} {...register("firstName")} />
+        <label className={styles.label}>Почта</label>
+        <input className={styles.mailInput} {...register("mailInput")} />
+        <label>Доставка</label>
+        <select {...register("delivery")}>
+          <option value="Доставка">Заберу самостоятельно</option>
+          <option value="Gojek">Доставка gojek</option>
+          <option value="Shipping">Отправка в другую страну</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
       {showVideo && (
         <div className={styles.videoOverlay}>
           <video
@@ -42,19 +62,6 @@ function Form({ onClose }: { onClose: () => void }) {
           </video>
         </div>
       )}
-      <form onSubmit={handleSubmit(onSubmit)} className={showVideo ? styles.hidden : ""}>
-        <label className={styles.label}>Твоё имя, красавец</label>
-        <input className={styles.nameInput} {...register("firstName")} />
-        <label className={styles.label}>Почта</label>
-        <input className={styles.mailInput} {...register("mailInput")} />
-        <label>Доставка</label>
-        <select {...register("delivery")}>
-          <option value="Доставка">Заберу самостоятельно</option>
-          <option value="Gojek">Доставка gojek</option>
-          <option value="Shipping">Отправка в другую страну</option>
-        </select>
-        <input type="submit" />
-      </form>
     </div>
   );
 }
