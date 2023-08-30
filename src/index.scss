@@ -397,6 +397,7 @@
   align-items: center;
   width: 100%;
   gap: 100px;
+  height: 100vh;
   @media (max-width: 1680px) {
     width: 100%;
     gap: 80px;
@@ -591,6 +592,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   @media (max-width: 1280px) {
     margin-bottom: 40px;
   }
