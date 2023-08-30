@@ -23,6 +23,9 @@ $text-margin: 10px;
     @media (max-width: 520px) {
       height: 480px;
     }
+    @media (max-width: 480px) {
+      height: 480px;
+    }
     @media (max-width: 420px) {
       height: 480px;
       width: 100%;
@@ -76,6 +79,9 @@ $text-margin: 10px;
         color: black;
         font-family: 'Handjet';
         font-size: 2rem;
+        @media (max-width: 480px) {
+          font-size: 1.2rem;
+        }
         @media (max-width: 420px) {
           font-size: 1.5rem;
         }
@@ -120,6 +126,9 @@ $text-margin: 10px;
         margin-bottom: $text-margin;
         align-items: flex-start;
         color: black;
+        @media (max-width: 480px) {
+          font-size: 1.2rem;
+        }
         @media (max-width: 420px) {
           font-size: 1.5rem;
         }
