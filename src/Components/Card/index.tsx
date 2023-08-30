@@ -50,16 +50,16 @@ export default function Card() {
       <img
         ref={imgRef}
         src={isPurchased ? vova : cart}
-        alt="Nike-Shoe"
-        className="sneaker-img"
-        height="350px"
+        alt="VaovaPic"
+        className={styles.sneakerImg}
+        height="330px"
       />
-      <h1 className="title" ref={titleRef}>
+      <h1 className={styles.title} ref={titleRef}>
         Lazy Surf Bag
       </h1>
       <p ref={descRef}>{isPurchased ? "Vova is not for sale" : "cool bag"}</p>
-      <div className="button-box" ref={purchaseRef}>
-        <button className="purchase" onClick={handlePurchaseClick}>
+      <div className={styles.buttonBox} ref={purchaseRef}>
+        <button className={styles.purchase} onClick={handlePurchaseClick}>
           {isPurchased ? "Vova can't be purchased" : "Purchase"}
         </button>
       </div>

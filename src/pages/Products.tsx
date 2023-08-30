@@ -67,10 +67,10 @@ const Products: React.FC = () => {
       <Header />
       <div className="products-box">
         {isLoading
-          ? Array.from({ length: 2 }).map((_, index) => (
+          ? Array.from({ length: 4 }).map((_, index) => (
               <div className="productSkel">
                 <ProductSkeleton key={index} />
-              </div>
+                </div>
             ))
           : bagCategories.map((product) => (
               <div key={product.id} className="productItem">

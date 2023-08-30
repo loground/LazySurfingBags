@@ -1,18 +1,13 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import React from "react";
 import styles from './FormStyles.module.scss';
-import vid from "../../itemsToUse/cashout.mp4"; // Import the video
+import vid from "../../itemsToUse/cashout.mp4"; 
 
-enum GenderEnum {
-  female = "female",
-  male = "male",
-  other = "other",
-}
 
 interface IFormInput {
   firstName: string;
   mailInput: string; 
-  gender: GenderEnum;
+  delivery: string;
 }
 
 function Form({ onClose }: { onClose: () => void }) {
@@ -52,11 +47,11 @@ function Form({ onClose }: { onClose: () => void }) {
         <input className={styles.nameInput} {...register("firstName")} />
         <label className={styles.label}>Почта</label>
         <input className={styles.mailInput} {...register("mailInput")} />
-        <label>Pretty Poison это?</label>
-        <select {...register("gender")}>
-          <option value="Сам">Гавно</option>
-          <option value="Доставка">Залупа</option>
-          <option value="Не знаю">Отстой</option>
+        <label>Доставка</label>
+        <select {...register("delivery")}>
+          <option value="Доставка">Заберу самостоятельно</option>
+          <option value="Gojek">Доставка gojek</option>
+          <option value="Shipping">Отправка в другую страну</option>
         </select>
         <input type="submit" />
       </form>

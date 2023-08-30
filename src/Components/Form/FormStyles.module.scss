@@ -20,6 +20,47 @@ form {
   height: 60vh;
   width: 60vh;
   margin-bottom: 35%;
+  @media (max-width: 1600px) {
+    height: 100%;
+    align-items: center;
+  }
+  @media (max-width: 1440px) {
+    height: 65%;
+    align-items: center;
+  }
+  @media (max-width: 1180px) {
+    height: 65%;
+    align-items: center;
+    padding-bottom: 5%;
+    margin-bottom: 42%;
+  }
+  @media (max-width: 1080px) {
+    height: 66%;
+    align-items: center;
+    padding-bottom: 5%;
+    margin-bottom: 46%;
+  }
+  @media (max-width: 980px) {
+    height: 66%;
+    width: 90%;
+    align-items: center;
+    padding-bottom: 5%;
+    margin-bottom: 50%;
+  }
+  @media (max-width: 860px) {
+    height: 65%;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 5%;
+    margin-bottom: 72%;
+  }
+  @media (max-width: 375px) {
+    height: 60%;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 5%;
+    margin-bottom: 80%;
+  }
 }
 
 .nameInput {
@@ -40,6 +81,12 @@ label {
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
+  @media (max-width: 980px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 375px) {
+    font-size: 1rem;
+  }
 }
 
 input[type='text'],

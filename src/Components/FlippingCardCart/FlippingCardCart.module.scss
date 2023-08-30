@@ -1,10 +1,10 @@
-$main-font: "Yanone Kaffeesatz", sans-serif;
+$main-font: 'Yanone Kaffeesatz', sans-serif;
 $new-white: rgb(248, 246, 234);
 $text-margin: 10px;
 
 .page_container {
   position: relative;
-  width: 400px;
+  width: 350px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -74,7 +74,7 @@ $text-margin: 10px;
         margin-bottom: $text-margin;
         align-items: flex-start;
         color: black;
-        font-family: "Handjet";
+        font-family: 'Handjet';
         font-size: 2rem;
         @media (max-width: 420px) {
           font-size: 1.5rem;
@@ -146,48 +146,15 @@ $text-margin: 10px;
 .button_area {
   position: relative;
   top: 15px;
-  width: 50%;
+  width: 57%;
   border-radius: 5px;
   padding: 10px;
   background-color: #ff09e2;
   color: black;
-  font-family: "Handjet";
+  font-family: 'Handjet';
   font-size: 22px;
   cursor: pointer;
   @media (max-width: 420px) {
     width: 100%;
   }
-}
-
-.buy_button {
-  position: relative;
-  top: 20px;
-  width: 50%;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #0c9d6a;
-  cursor: pointer;
-  color: black;
-  font-family: "Handjet";
-  font-size: 22px;
-  @media (max-width: 420px) {
-    width: 100%;
-  }
-}
-
-.video_area {
-  align-items: center;
-}
-
-.video_wrapper {
-  width: 100%;
-  @media (max-width: 420px) {
-    width: 100%;
-    margin-left: 0%;
-  }
-}
-
-.video {
-  max-width: 100%;
-  max-height: 100%;
 }
